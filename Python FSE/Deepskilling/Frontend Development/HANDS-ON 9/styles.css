@@ -1,0 +1,172 @@
+/* ---------- CSS Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #222831;
+  line-height: 1.5;
+}
+
+/* Task 3, step 132: never remove focus outlines without a visible replacement */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.course-card:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.site-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#hero {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background-color: #e8edf3;
+}
+
+#hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+/*
+  Task 3, step 134: colour contrast fix.
+  Before: secondary paragraph text was #9ca3af on #ffffff -> contrast ratio 2.9:1 (FAIL, needs 4.5:1)
+  After:  changed to #4b5563 on #ffffff -> contrast ratio 7.5:1 (PASS AA and AAA)
+*/
+#hero p,
+.course-card p {
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+#hero button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 2px solid #2563eb;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#hero button:hover {
+  background-color: #1d4ed8;
+}
+
+#courses {
+  padding: 3rem 2rem;
+}
+
+#courses h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  padding: 0.6rem;
+  border: 1px solid #6b7280;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 1rem;
+}
+
+#results-count {
+  margin-bottom: 1rem;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.course-card {
+  padding: 1.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.course-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.course-card .credits {
+  font-weight: bold;
+  color: #1d4ed8;
+}
+
+#profile-form-section {
+  padding: 0 2rem 3rem;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  background-color: #1f2937;
+  color: #ffffff;
+  font-size: 0.9rem;
+}

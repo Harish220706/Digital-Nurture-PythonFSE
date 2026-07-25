@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portal</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Axios CDN -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+
+<h1>Student Portal</h1>
+
+<h2>Courses</h2>
+
+<p id="loading">Loading courses...</p>
+
+<div class="course-grid"></div>
+
+<h2>Notifications</h2>
+
+<div id="spinner">Loading...</div>
+
+<section id="notifications"></section>
+
+<p id="error"></p>
+
+<button id="retryBtn" style="display:none;">
+Retry
+</button>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

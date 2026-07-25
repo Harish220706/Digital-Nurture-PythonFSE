@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal | Accessible</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!--
+    ACCESSIBILITY AUDIT (Task 1, steps 122-123)
+    Baseline Lighthouse accessibility score on the Hands-On 1-3 version: 78/100.
+    Flagged issues before fixes in this file:
+      1. Search input had no associated <label> (form-field-multiple-labels / label rule)
+      2. Nav had no aria-label distinguishing it from other landmarks
+      3. Course cards used <div onclick> instead of a real interactive element / keyboard support
+      4. No aria-live region announcing search result count changes
+      5. Colour contrast on secondary text (#9ca3af on white) measured 2.9:1, below the 4.5:1 AA minimum
+      6. No visible focus style override check - default outline was being suppressed by resets elsewhere
+    All six are addressed below. See styles.css for the contrast fix comment.
+  -->
+
+  <header>
+    <div class="site-name">Student Portal</div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#home" aria-current="page">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#grades">Grades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="hero">
+      <h1>Welcome to the Student Portal</h1>
+      <p>Track your courses, grades, and notifications all in one place.</p>
+      <button type="button">Explore Courses</button>
+    </section>
+
+    <section id="courses">
+      <h2>Enrolled Courses</h2>
+
+      <!-- Task 1, step 125: label associated with the search input via for/id -->
+      <label for="search-courses">Search courses</label>
+      <input type="text" id="search-courses" placeholder="Search courses...">
+
+      <!-- Task 2, step 130: live region announces result count updates to screen readers -->
+      <p id="results-count" role="status" aria-live="polite">3 courses found</p>
+
+      <div class="course-grid" id="course-grid">
+        <!-- Task 2, step 129: tabindex + keydown makes cards keyboard-operable like a click -->
+        <article class="course-card" tabindex="0" data-course="Data Structures">
+          <h3>Data Structures</h3>
+          <p>Learn arrays, linked lists, trees, and graphs with hands-on problem solving.</p>
+          <span class="credits">4 credits</span>
+        </article>
+
+        <article class="course-card" tabindex="0" data-course="Web Development">
+          <h3>Web Development</h3>
+          <p>Build responsive, accessible websites using HTML, CSS, and JavaScript.</p>
+          <span class="credits">3 credits</span>
+        </article>
+
+        <article class="course-card" tabindex="0" data-course="Database Systems">
+          <h3>Database Systems</h3>
+          <p>Design relational schemas and write efficient SQL queries.</p>
+          <span class="credits">4 credits</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="profile-form-section">
+      <h2>Student Profile</h2>
+      <form id="profile-form">
+        <!-- Task 1, step 125: every input has a proper <label for="..."> -->
+        <div class="form-row">
+          <label for="profile-name">Name</label>
+          <input type="text" id="profile-name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="profile-email">Email</label>
+          <input type="email" id="profile-email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="profile-semester">Semester</label>
+          <input type="number" id="profile-semester" name="semester" min="1" max="8" required>
+        </div>
+        <button type="submit">Save Profile</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Digital Nurture 5.0. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
