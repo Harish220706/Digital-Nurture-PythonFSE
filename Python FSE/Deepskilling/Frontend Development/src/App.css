@@ -1,0 +1,84 @@
+body{
+    background:#f4f4f4;
+}
+
+.header{
+
+    background:#1e3a8a;
+    color:white;
+    padding:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.header nav a{
+
+    color:white;
+    text-decoration:none;
+    margin:10px;
+
+}
+
+.container{
+
+    padding:20px;
+
+}
+
+input{
+
+    padding:10px;
+    width:300px;
+    margin-bottom:20px;
+
+}
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+
+}
+
+.card{
+
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+
+}
+
+.card button{
+
+    margin-top:10px;
+    padding:10px 20px;
+
+}
+
+.profile{
+
+    margin-top:40px;
+
+}
+
+.profile input{
+
+    display:block;
+    margin:10px 0;
+
+}
+
+footer{
+
+    margin-top:30px;
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:20px;
+
+}
