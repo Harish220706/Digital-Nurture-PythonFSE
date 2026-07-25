@@ -1,0 +1,282 @@
+/* CSS Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+
+body{
+
+    font-family:Arial, sans-serif;
+    background:#f4f6f9;
+    color:#333;
+
+}
+
+/* Header */
+
+header{
+
+    background:#1e3a8a;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding:20px;
+    gap:15px;
+
+}
+
+/* Logo */
+
+.logo{
+
+    font-size:clamp(1.5rem,3vw,2.5rem);
+
+}
+
+/* Navigation */
+
+nav ul{
+
+    list-style:none;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+
+}
+
+nav a:hover{
+
+    color:#ffd700;
+
+}
+
+/* Hero */
+
+#hero{
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    min-height:40vh;
+
+    padding:40px 20px;
+
+}
+
+#hero h1{
+
+    margin-bottom:20px;
+
+}
+
+#hero p{
+
+    margin-bottom:25px;
+    max-width:600px;
+
+}
+
+#hero button{
+
+    padding:12px 25px;
+
+    background:#1e3a8a;
+    color:white;
+
+    border:2px solid #1e3a8a;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}
+
+#hero button:hover{
+
+    background:white;
+    color:#1e3a8a;
+
+}
+
+/* Stats */
+
+.stats{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:30px;
+
+}
+
+.stat-item{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+
+    flex:1;
+
+}
+
+/* Courses */
+
+#courses{
+
+    padding:40px 20px;
+
+}
+
+#courses h2{
+
+    text-align:center;
+    margin-bottom:30px;
+
+}
+
+/* Grid */
+
+.course-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+}
+
+/* Course Card */
+
+.course-card{
+
+    background:white;
+
+    padding:20px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+
+    min-height:200px;
+
+    align-self:stretch;
+
+}
+
+.course-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.course-card p{
+
+    margin-bottom:15px;
+
+}
+
+.course-card span{
+
+    font-weight:bold;
+    color:#1e3a8a;
+
+}
+
+/* Footer */
+
+footer{
+
+    background:#1e3a8a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:40px;
+
+}
+
+/* Tablet */
+
+@media (min-width:768px){
+
+header{
+
+    flex-direction:row;
+
+    justify-content:space-between;
+
+}
+
+nav ul{
+
+    flex-direction:row;
+
+}
+
+.stats{
+
+    flex-direction:row;
+
+}
+
+.course-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* Desktop */
+
+@media (min-width:1024px){
+
+#hero{
+
+    padding:80px 20px;
+
+}
+
+.course-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+}
